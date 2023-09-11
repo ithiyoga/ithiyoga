@@ -24,12 +24,14 @@
     function openIframePopup() {
       var iframePopup = document.getElementById("iframePopupContainer");
       iframePopup.style.display = "block";
+      document.body.style.overflow = "hidden"; /* Disable scrolling on the background */
     }
 
     // Function to close the iframe popup
     function closeIframePopup() {
       var iframePopup = document.getElementById("iframePopupContainer");
       iframePopup.style.display = "none";
+      document.body.style.overflow = "auto"; /* Enable scrolling on the background */
     }
   </script>
 
@@ -46,8 +48,8 @@
       /* Semi-transparent background */
       z-index: 999;
       /* Ensure it appears on top of other elements */
-      overflow: auto;
-      /* Enable scrolling if content overflows */
+      overflow: hidden;
+      /* Disable scrolling on the background */
     }
 
     /* Styles for the close button */
@@ -72,6 +74,10 @@
       padding: 20px;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      overflow-y: scroll;
+      /* Enable scrolling within the iframe container */
+      max-height: calc(100% - 40px);
+      /* Limit iframe height to fit within the popup */
     }
 
     /* Style for the iframe */
