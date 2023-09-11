@@ -18,6 +18,71 @@
   <link rel="icon" href="images/ithiyoga.png" type="image/icon type">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <script>
+    // Function to open the iframe popup
+    function openIframePopup() {
+      var iframePopup = document.getElementById("iframePopupContainer");
+      iframePopup.style.display = "block";
+    }
+
+    // Function to close the iframe popup
+    function closeIframePopup() {
+      var iframePopup = document.getElementById("iframePopupContainer");
+      iframePopup.style.display = "none";
+    }
+  </script>
+
+  <style>
+    /* Styles for the popup container */
+    .popup-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      /* Semi-transparent background */
+      z-index: 999;
+      /* Ensure it appears on top of other elements */
+      overflow: auto;
+      /* Enable scrolling if content overflows */
+    }
+
+    /* Styles for the close button */
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+    }
+
+    /* Styles for the iframe container */
+    .iframe-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 800px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Style for the iframe */
+    iframe {
+      width: 100%;
+      height: 400px;
+      /* Adjust the height as needed */
+      border: none;
+      /* Remove iframe border */
+    }
+  </style>
 </head>
 
 <body>
@@ -120,7 +185,9 @@
                     <div class="icon"><span class="flaticon-lotus-flower"></span></div>
                     <h3>"I am standing on my own altar, The Poses are my prayers"</h3>
                   </div>
-                  <p>At ithi, we are passionate about sharing the ancient wisdom of yoga with people of all backgrounds and skill levels. With experienced instructors and a diverse range of classes, we offer a holistic approach to yoga, helping you achieve physical, mental, and spiritual balance.</p>
+                  <p>At ithi, we are passionate about sharing the ancient wisdom of yoga with people of all backgrounds
+                    and skill levels. With experienced instructors and a diverse range of classes, we offer a holistic
+                    approach to yoga, helping you achieve physical, mental, and spiritual balance.</p>
                   <!-- <div class="d-flex video-about align-items-center mt-md-4">
                     <a href="#" class="video img d-flex align-items-center justify-content-center"
                       style="background-image: url(images/about-2.jpg);">
@@ -227,6 +294,18 @@
       </div>
     </div>
   </section>
+  <!-- Popup container -->
+  <div class="popup-container" id="iframePopupContainer" style="display: none;">
+    <!-- Close button -->
+    <span class="close-button" onclick="closeIframePopup()">&times;</span>
+
+    <!-- Iframe container -->
+    <div class="iframe-container">
+      <iframe width='100%' height='750px'
+        src='https://ithiyoga.zohobookings.in/portal-embed#/customer/202457000000030054' frameborder='0'
+        allowfullscreen=''> </iframe>
+    </div>
+  </div>
   <section class="ftco-section">
     <div class="container">
       <div class="row justify-content-center pb-5">
@@ -243,9 +322,12 @@
               <div class="meta">
                 <p>
                   <!-- <a href="#"><span class="fa fa-user mr-1"></span>Joe Doe</a> -->
-                  <a href=""
-                  onclick="Calendly.initPopupWidget({url: 'https://calendly.com/teamithiyoga/30min'});return false;"><span
-                    class="fa fa-calendar mr-1"></span>Book Free Sessions</a>
+                  <a href="" onclick="openIframePopup(); return false;"><span class="fa fa-calendar mr-1"></span>Book
+                    Free Sessions</a>
+
+                  <!-- <a href=""
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/teamithiyoga/30min'});return false;"><span
+                      class="fa fa-calendar mr-1"></span>Book Free Sessions</a> -->
                   <!-- <a href="#" class="meta-chat"><span class="fa fa-clock-o mr-1"></span> 8:00 am- 9:00am</a> -->
                 </p>
               </div>
@@ -948,7 +1030,8 @@
     data-cf-beacon='{"rayId":"800c4dd23fb1306f","version":"2023.8.0","b":1,"token":"cd0b4b3a733644fc843ef0b185f98241","si":100}'
     crossorigin="anonymous">
     </script>
-  <script type="text/javascript">!function(t,e){t.artibotApi={l:[],t:[],on:function(){this.l.push(arguments)},trigger:function(){this.t.push(arguments)}};var a=!1,i=e.createElement("script");i.async=!0,i.type="text/javascript",i.src="https://app.artibot.ai/loader.js",e.getElementsByTagName("head").item(0).appendChild(i),i.onreadystatechange=i.onload=function(){if(!(a||this.readyState&&"loaded"!=this.readyState&&"complete"!=this.readyState)){new window.ArtiBot({i:"b92ba74d-e6a9-4199-924b-b8d8fc4591d4"});a=!0}}}(window,document);</script>
+  <script
+    type="text/javascript">!function (t, e) { t.artibotApi = { l: [], t: [], on: function () { this.l.push(arguments) }, trigger: function () { this.t.push(arguments) } }; var a = !1, i = e.createElement("script"); i.async = !0, i.type = "text/javascript", i.src = "https://app.artibot.ai/loader.js", e.getElementsByTagName("head").item(0).appendChild(i), i.onreadystatechange = i.onload = function () { if (!(a || this.readyState && "loaded" != this.readyState && "complete" != this.readyState)) { new window.ArtiBot({ i: "b92ba74d-e6a9-4199-924b-b8d8fc4591d4" }); a = !0 } } }(window, document);</script>
 </body>
 
 </html>
