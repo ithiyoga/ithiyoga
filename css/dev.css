@@ -1,0 +1,114 @@
+/* Styles for the popup container */
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
+    z-index: 999;
+    /* Ensure it appears on top of other elements */
+    overflow: hidden;
+    /* Disable scrolling on the background */
+  }
+
+  /* Styles for the close button */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+  }
+
+  /* Styles for the iframe container */
+  .iframe-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow-y: scroll;
+    /* Enable scrolling within the iframe container */
+    max-height: calc(100% - 40px);
+    /* Limit iframe height to fit within the popup */
+  }
+
+  /* Style for the iframe */
+  iframe {
+    width: 100%;
+    height: 400px;
+    /* Adjust the height as needed */
+    border: none;
+    /* Remove iframe border */
+  }
+
+
+  /* Popup container styles */
+  .quote-popup-container {
+    display: none;
+    /* Initially hidden */
+    position: fixed;
+    /* Fixed positioning for overlay */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
+    z-index: 1;
+    /* Ensure it's above other content */
+    display: flex;
+    /* Display as a flex container */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+  }
+
+  /* Popup content styles */
+  .quote-popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 100%;
+    /* Set the maximum width of the popup */
+    max-height: 100%;
+    /* Set the maximum height of the popup */
+    overflow-y: auto;
+    /* Enable vertical scrolling if content exceeds height */
+  }
+
+  /* Styles for the popup header */
+  .quote-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  /* Styles for the close button */
+  .quote-close-button {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+  }
+
+  /* Media query for mobile view */
+  @media (max-width: 700px) {
+    /* Adjust padding for mobile view */
+    .quote-popup-content {
+      margin: 15px;
+      /* Add padding from left and right */
+    }
+  }

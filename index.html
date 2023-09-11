@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/css-magnific-popup.css">
   <link rel="stylesheet" href="css/css-flaticon.css">
   <link rel="stylesheet" href="css/css-style.css">
+  <link rel="stylesheet" href="css/dev.css">
   <link rel="icon" href="images/ithiyoga.png" type="image/icon type">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -33,62 +34,19 @@
       iframePopup.style.display = "none";
       document.body.style.overflow = "auto"; /* Enable scrolling on the background */
     }
+
+    // Function to open the popup
+    function openQuotePopup() {
+      var popup = document.getElementById("quotePopupContainer");
+      popup.style.display = "flex"; /* Display as a flex container */
+    }
+
+    // Function to close the popup
+    function closeQuotePopup() {
+      var popup = document.getElementById("quotePopupContainer");
+      popup.style.display = "none";
+    }
   </script>
-
-  <style>
-    /* Styles for the popup container */
-    .popup-container {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      /* Semi-transparent background */
-      z-index: 999;
-      /* Ensure it appears on top of other elements */
-      overflow: hidden;
-      /* Disable scrolling on the background */
-    }
-
-    /* Styles for the close button */
-    .close-button {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 24px;
-      cursor: pointer;
-      color: white;
-    }
-
-    /* Styles for the iframe container */
-    .iframe-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      max-width: 800px;
-      background-color: white;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      overflow-y: scroll;
-      /* Enable scrolling within the iframe container */
-      max-height: calc(100% - 40px);
-      /* Limit iframe height to fit within the popup */
-    }
-
-    /* Style for the iframe */
-    iframe {
-      width: 100%;
-      height: 400px;
-      /* Adjust the height as needed */
-      border: none;
-      /* Remove iframe border */
-    }
-  </style>
 </head>
 
 <body>
@@ -136,7 +94,7 @@
           <!-- <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li> -->
           <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Quote</a></li>
+          <li class="nav-item"><a href="" onclick="openQuotePopup(); return false;" class="nav-link">Quote</a></li>
         </ul>
       </div>
     </div>
@@ -300,9 +258,31 @@
       </div>
     </div>
   </section>
-  <!-- Popup container -->
+
+  <!-- Qoute Popup container -->
+  <div style="display: none;" class="quote-popup-container" id="quotePopupContainer">
+    <div class="quote-popup-content">
+      <div>
+        <div class="row justify-content-start pb-3">
+          <div class="col-md-12 heading-section ftco-animate">
+            <div class="quote-popup-header">
+              <h2 class="mb-4"></h2>
+              <span class="quote-close-button" onclick="closeQuotePopup()">&times;</span>
+            </div>
+            <h2 class="mb-4">Welcome to ithi</h2>
+            <div class="d-flex about">
+              <h3 style="font-style: italic;">"I am standing on my own altar, The Poses are my prayers"</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Iframe Popup container -->
   <div class="popup-container" id="iframePopupContainer" style="display: none;">
-    <!-- Close button -->
+    <!-- Iframe Close button -->
     <span class="close-button" onclick="closeIframePopup()">&times;</span>
 
     <!-- Iframe container -->
@@ -312,6 +292,7 @@
         allowfullscreen=''> </iframe>
     </div>
   </div>
+
   <section class="ftco-section">
     <div class="container">
       <div class="row justify-content-center pb-5">
@@ -327,7 +308,7 @@
             <div class="text w-100 text-center">
               <div class="meta">
                 <p>
-                  <!-- <a href="#"><span class="fa fa-user mr-1"></span>Joe Doe</a> -->
+                  <!-- <a href="" onclick="openQuotePopup(); return false;"><span class="fa fa-user mr-1"></span>Joe Doe</a> -->
                   <a href="" onclick="openIframePopup(); return false;"><span class="fa fa-calendar mr-1"></span>Book
                     Free Sessions</a>
 
