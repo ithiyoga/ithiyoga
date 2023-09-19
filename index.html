@@ -39,10 +39,27 @@
 
   <script>
     // Function to open the iframe popup
-    function openIframePopup() {
+    function openIframePopup(divId) {
       var iframePopup = document.getElementById("iframePopupContainer");
       iframePopup.style.display = "block";
       document.body.style.overflow = "hidden"; /* Disable scrolling on the background */
+      // Change the src of the iframe
+      var dynamicIframe = document.getElementById("dynamicIframeId");
+      // Generate a timestamp
+      var timestamp = new Date().getTime();
+      if (divId === 'private') {
+        dynamicIframe.src = "https://ithiyoga.zohobookings.in/portal-embed#/customer/202457000000042012?timestamp=" + timestamp;
+      } else if (divId === 'pregnant') {
+        dynamicIframe.src = "https://ithiyoga.zohobookings.in/portal-embed#/customer/202457000000030054?timestamp=" + timestamp;
+      } else if (divId === 'thyroid') {
+        dynamicIframe.src = "https://ithiyoga.zohobookings.in/portal-embed#/customer/202457000000030257?timestamp=" + timestamp;
+      } else if (divId === 'pranayama') {
+        dynamicIframe.src = "https://ithiyoga.zohobookings.in/portal-embed#/customer/202457000000042042?timestamp=" + timestamp;
+      } else if (divId === 'therapy') {
+        dynamicIframe.src = "https://ithiyoga.zohobookings.in/portal-embed#/customer/202457000000042066?timestamp=" + timestamp;
+      } else if (divId === 'pcos') {
+        dynamicIframe.src = "https://ithiyoga.zohobookings.in/portal-embed#/customer/202457000000042090?timestamp=" + timestamp;
+      }
     }
 
     // Function to close the iframe popup
@@ -279,7 +296,8 @@
 
   <!-- Qoute Popup container -->
   <div style="display: none;" class="quote-popup-container" id="quotePopupContainer">
-    <div class="quote-popup-content" style="background-image: url(images/clouds.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="quote-popup-content"
+      style="background-image: url(images/clouds.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
       <div>
         <div class="row justify-content-start pb-3">
           <div class="col-md-12 heading-section ftco-animate">
@@ -287,7 +305,7 @@
               <h2 class="mb-4"></h2>
               <span style="color: white;" class="quote-close-button" onclick="closeQuotePopup()">&times;</span>
             </div>
-            <div  class="d-flex about">
+            <div class="d-flex about">
               <h3 style="color: black ; font-style: italic;">"Let the beauty of what you love be what you do"</h3>
             </div>
             <h4 style="color: black;" class="mb-4">Rumi</h4>
@@ -305,8 +323,9 @@
 
     <!-- Iframe container -->
     <div class="iframe-container">
-      <iframe width='100%' height='750px' src='https://ithiyoga.zohobookings.in/portal-embed#/customer/ithiyoga'
-        frameborder='0' allowfullscreen=''> </iframe>
+      <iframe id="dynamicIframeId" width='100%' height='750px'
+        src='https://ithiyoga.zohobookings.in/portal-embed#/customer/ithiyoga' frameborder='0' allowfullscreen=''>
+      </iframe>
     </div>
   </div>
 
@@ -326,7 +345,8 @@
               <div class="meta">
                 <p>
                   <!-- <a href="" onclick="openQuotePopup(); return false;"><span class="fa fa-user mr-1"></span>Joe Doe</a> -->
-                  <a href="" onclick="openIframePopup(); return false;"><span class="fa fa-calendar mr-1"></span>Book
+                  <a href="" onclick="openIframePopup('private'); return false;"><span
+                      class="fa fa-calendar mr-1"></span>Book
                     Free Sessions</a>
 
                   <!-- <a href=""
@@ -346,7 +366,8 @@
               <div class="meta">
                 <p>
                   <!-- <a href="#"><span class="fa fa-user mr-1"></span>Joe Doe</a> -->
-                  <a href="" onclick="openIframePopup(); return false;"><span class="fa fa-calendar mr-1"></span>Book
+                  <a href="" onclick="openIframePopup('pregnant'); return false;"><span
+                      class="fa fa-calendar mr-1"></span>Book
                     Free Sessions</a>
                   <!-- <a href=""
                     onclick="Calendly.initPopupWidget({url: 'https://calendly.com/teamithiyoga/30min'});return false;"><span
@@ -365,7 +386,8 @@
               <div class="meta">
                 <p>
                   <!-- <a href="#"><span class="fa fa-user mr-1"></span>Joe Doe</a> -->
-                  <a href="" onclick="openIframePopup(); return false;"><span class="fa fa-calendar mr-1"></span>Book
+                  <a href="" onclick="openIframePopup('thyroid'); return false;"><span
+                      class="fa fa-calendar mr-1"></span>Book
                     Free Sessions</a>
                   <!-- <a href=""
                     onclick="Calendly.initPopupWidget({url: 'https://calendly.com/teamithiyoga/30min'});return false;"><span
@@ -384,7 +406,8 @@
               <div class="meta">
                 <p>
                   <!-- <a href="#"><span class="fa fa-user mr-1"></span>Joe Doe</a> -->
-                  <a href="" onclick="openIframePopup(); return false;"><span class="fa fa-calendar mr-1"></span>Book
+                  <a href="" onclick="openIframePopup('pranayama'); return false;"><span
+                      class="fa fa-calendar mr-1"></span>Book
                     Free Sessions</a>
                   <!-- <a href=""
                     onclick="Calendly.initPopupWidget({url: 'https://calendly.com/teamithiyoga/30min'});return false;"><span
@@ -403,7 +426,8 @@
               <div class="meta">
                 <p>
                   <!-- <a href="#"><span class="fa fa-user mr-1"></span>Joe Doe</a> -->
-                  <a href="" onclick="openIframePopup(); return false;"><span class="fa fa-calendar mr-1"></span>Book
+                  <a href="" onclick="openIframePopup('therapy'); return false;"><span
+                      class="fa fa-calendar mr-1"></span>Book
                     Free Sessions</a>
                   <!-- <a href=""
                     onclick="Calendly.initPopupWidget({url: 'https://calendly.com/teamithiyoga/30min'});return false;"><span
@@ -422,7 +446,8 @@
               <div class="meta">
                 <p>
                   <!-- <a href="#"><span class="fa fa-user mr-1"></span>Joe Doe</a> -->
-                  <a href="" onclick="openIframePopup(); return false;"><span class="fa fa-calendar mr-1"></span>Book
+                  <a href="" onclick="openIframePopup('pcos'); return false;"><span
+                      class="fa fa-calendar mr-1"></span>Book
                     Free Sessions</a>
                   <!-- <a href=""
                     onclick="Calendly.initPopupWidget({url: 'https://calendly.com/teamithiyoga/30min'});return false;"><span
